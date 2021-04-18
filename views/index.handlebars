@@ -1,0 +1,38 @@
+<h1>Welcome to Kofi's Burgers!</h1>
+
+<h3>The Best burgers this side of the Misssissippi!!!!!</h3>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> cats/cat-block sleep=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Burgers already Devoured!</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> cats/cat-block sleep=false}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="sleepy">Got the Itis?</label><br>
+        <input type="radio" name="sleepy" value="1" checked> Got the Itis!!<br>
+        <input type="radio" name="sleepy" value="0"> Awake 'n' Ready!
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
