@@ -1,0 +1,17 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "An app for burger lovers around the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kofi Hayford",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "mysql": "^2.18.1"
+  }
+}
