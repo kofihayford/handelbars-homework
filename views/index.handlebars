@@ -1,38 +1,59 @@
-<h1>Welcome to Kofi's Burgers!</h1>
-
-<h3>The Best burgers this side of the Misssissippi!!!!!</h3>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burgerblock devoured=false}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Burgers already Devoured!</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burgerblock devoured=true}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="name">
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Kofi's Burger Joint! </h1>
+        <img src="assets/img/burger.png" alt="burger image" width="300">
+        <hr class="my-4">
+        <p class="lead">Welcome to a land of burger dreams.<br>Here, you can devour a burger, create a new burger, or
+            add a previously devoured buger back onto the menu.</p>
     </div>
 
-    <div class="form-group">
-        <label for="sleepy">Got the Itis?</label><br>
-        <input type="radio" name="sleepy" value="1" checked> Got the Itis!!<br>
-        <input type="radio" name="sleepy" value="0"> Awake 'n' Ready!
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Burgers to be Devoured!</h5>
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{> burgers/burgerblock devoured=true}}
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Burgers already Devoured!</h5>
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        {{> burgers/burgerblock devoured=false}}
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
-</form>
+
+
+    <div class="card burger-entry">
+        <div class="card-header">
+            Add a Burger
+        </div>
+        <div class="card-body">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="ca">Burger Name:</label>
+                    <input type="text" id="ca" name="name" class="form-control">
+                </div>
+                <button type="submit">Add Burger</button>
+            </form>
+        </div>
+    </div>
+
+</div>

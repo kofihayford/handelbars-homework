@@ -19,7 +19,7 @@ app.engine("handlebars", expresshbrs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import the routes and give server access to routes.
-var routing = require("./controllers/burgers_controller.js");
+var routing = require("./controllers/burgercontroller.js");
 app.use(routing);
 
 // Start the server start listening to requests.

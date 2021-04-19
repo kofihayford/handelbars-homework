@@ -1,5 +1,5 @@
 // First import the MySQL database connection
-var connection = require("./connections");
+var connection = require("./connections.js");
 
 // Using this fucntion to attach question marks to each MySQL query. Using a for loop to make an array of question marks. Then we can use toString to put it together. 
 function printQuestionMarks(num) {
@@ -48,6 +48,7 @@ var orm = {
     //Add new burgers to the database - CREATE 
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
+
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
@@ -67,8 +68,8 @@ var orm = {
     update: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
-        queryString += " WHERE ";
         queryString += makeSqlObj(objColVals);
+        queryString += " WHERE ";
         queryString += condition;
         console.log(queryString);
         connection.query(queryString, function (err, result) {
